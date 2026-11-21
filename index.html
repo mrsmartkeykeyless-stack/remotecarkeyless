@@ -29,6 +29,11 @@ height:110px;
 object-fit:contain;
 border-radius:8px;
 }.brand small{display:block;color:var(--muted);font-size:11px;font-weight:400;letter-spacing:0}.nav{display:flex;gap:22px;color:#ddd;font-size:13px}.nav a:hover{color:var(--gold2)}.call{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#15110a;padding:10px 19px;border-radius:7px;font-weight:900;white-space:nowrap}.hero{padding:76px 0 64px;background:radial-gradient(ellipse at 15% 20%,rgba(214,173,98,.15),transparent 42%),linear-gradient(180deg,#10100f,#090909)}.eyebrow{color:var(--gold);font-size:13px;letter-spacing:1px}.hero h1{font-size:clamp(30px,5vw,54px);line-height:1.5;margin:12px 0 16px;max-width:850px}.hero h1 span{color:var(--gold2)}.hero p{color:var(--muted);max-width:760px;font-size:16px;margin:0 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}.outline{border:1px solid var(--gold);color:var(--gold2);padding:9px 19px;border-radius:7px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px}.stat{background:rgba(255,255,255,.035);border:1px solid var(--line);padding:16px;border-radius:10px}.stat b{display:block;color:var(--gold2);font-size:15px}.stat span{font-size:12px;color:var(--muted)}section{padding:62px 0}.section-title{text-align:center;margin-bottom:30px}.section-title h2{font-size:29px;margin:0 0 8px}.section-title p{color:var(--muted);margin:0;font-size:14px}.grid,.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:12px}.icon{font-size:25px;color:var(--gold2)}.card h3{font-size:17px;margin:8px 0}.card p{font-size:13px;color:var(--muted);margin:0}.darkband{background:#111;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.vehicles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.tag{border:1px solid var(--line);background:#171717;color:#e9dfca;padding:8px 14px;border-radius:30px;font-size:13px}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}.split h2{font-size:28px;margin:0 0 12px}.split p,.split li{color:var(--muted);font-size:14px}.split ul{padding-right:20px}.highlight{border:1px solid var(--line);border-radius:14px;padding:26px;background:linear-gradient(145deg,#191713,#101010)}.highlight strong{color:var(--gold2);font-size:21px;display:block;margin-bottom:8px}.contactbox{text-align:center;border:1px solid var(--line);background:radial-gradient(ellipse at center,rgba(214,173,98,.12),transparent 70%),#111;border-radius:16px;padding:38px 20px}.contactbox h2{margin:0 0 8px;font-size:28px}.phone{direction:ltr;display:inline-block;color:var(--gold2);font-size:clamp(25px,5vw,38px);font-weight:900;letter-spacing:1px;margin:12px 0 20px}.contactbox p{color:var(--muted);font-size:14px}.footer{border-top:1px solid var(--line);padding:22px 0;color:#999;font-size:12px;text-align:center}.mobile-call{display:none}
+.header-calls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.header-calls .call{font-size:13px;padding:9px 12px}
+.contact-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;direction:rtl;margin:20px 0}
+.contact-actions .phone{display:flex;align-items:center;justify-content:center;min-width:0;max-width:100%;margin:0;padding:12px 8px;border:1px solid var(--line);border-radius:9px;font-size:clamp(11px,2vw,16px);letter-spacing:0;white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.8}
+.mobile-callbar{display:none}
 @media(max-width:760px){.nav{display:none}.topin{padding:12px 0}.brand{font-size:17px}.hero{padding:54px 0 44px}.stats{grid-template-columns:1fr}.grid,.cards{grid-template-columns:1fr}.split{grid-template-columns:1fr}section{padding:48px 0}.mobile-call{display:block;position:fixed;bottom:12px;left:4%;right:4%;z-index:9;text-align:center;box-shadow:0 5px 24px #000}.footer{padding-bottom:82px}.topin{
 display:flex;
 flex-direction:column;
@@ -49,7 +54,20 @@ height:80px;
 .topin>.call{
 width:100%;
 margin:0;
-}}
+}
+.header-calls{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.header-calls .call{font-size:12px;padding:10px 6px;white-space:normal;text-align:center}
+.contact-actions{grid-template-columns:1fr}
+.mobile-callbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;bottom:10px;left:3%;right:3%;z-index:9}
+.mobile-callbar .call{min-width:0;padding:12px 5px;font-size:12px;white-space:normal;text-align:center;box-shadow:0 5px 24px #000}
+.footer{padding-bottom:88px}
+}
+.card,.stat,.highlight,.contactbox,.wrap,.split>*{min-width:0}
+h1,h2,h3,p,li,a,span,strong{overflow-wrap:anywhere}
+img{max-width:100%;height:auto}
+.vehicles{min-width:0}
+.tag{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+
 </style>
   <script type="application/ld+json">
 {
@@ -140,7 +158,7 @@ margin:0;
       <a href="#contact">تماس</a>
     </nav>
 
-    <a class="call" href="tel:09120174169">تماس مستقیم</a>
+    <div class="header-calls"><a class="call" href="tel:09120174168">تماس مستقیم با هاشمی</a><a class="call" href="tel:09120174169">تماس مستقیم با شمس</a></div>
   </div>
 </header>
 <main id="home">
@@ -389,7 +407,7 @@ margin:0;
 <h2>برای دریافت مشاوره و هماهنگی تماس بگیرید</h2>
 <p>مدل خودرو و نوع درخواست خود را اعلام کنید.</p>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;direction:rtl;margin:20px 0;">
+<div class="contact-actions">
 <a class="phone" href="tel:09120174168" style="font-size:clamp(11px,3.5vw,16px);white-space:nowrap;">تماس با هاشمی | 09120174168</a>
 <a class="phone" href="tel:09120174169" style="font-size:clamp(11px,3.5vw,16px);white-space:nowrap;">تماس با شمس | 09120174169</a>
 </div>
@@ -405,6 +423,6 @@ margin:0;
 <div class="wrap">© Remote Car Keyless — مدرن اسمارت کی | خدمات تخصصی کلید و ریموت خودرو</div>
 </footer>
 
-<a class="call mobile-call" href="tel:09120174169">تماس مستقیم</a>
+<div class="mobile-callbar"><a class="call" href="tel:09120174168">تماس مستقیم با هاشمی</a><a class="call" href="tel:09120174169">تماس مستقیم با شمس</a></div>
 </body>
 </html>
